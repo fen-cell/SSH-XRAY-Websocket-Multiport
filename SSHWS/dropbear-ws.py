@@ -6,11 +6,11 @@ LISTENING_ADDR = '0.0.0.0'
 LISTENING_PORT = sys.argv[1]
 
 # Pass
-PASS = ''
+PASS = 1
 
 # CONST
 BUFLEN = 4096 * 4
-TIMEOUT = 60
+TIMEOUT = 1000
 DEFAULT_HOST = '127.0.0.1:109'
 RESPONSE = 'HTTP/1.1 101 WebSocket By Vinstechmy\r\nContent-Length: 104857600000\r\n\r\n'
 
@@ -168,7 +168,7 @@ class ConnectionHandler(threading.Thread):
             host = host[:i]
         else:
             if self.method=='CONNECT':
-                port = 443
+                port = 80
             else:
                 port = sys.argv[1]
 
